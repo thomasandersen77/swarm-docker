@@ -1,3 +1,5 @@
+package swarm;
+
 import lombok.extern.slf4j.Slf4j;
 import org.jboss.shrinkwrap.api.asset.FileAsset;
 import org.wildfly.swarm.container.Container;
@@ -26,7 +28,7 @@ public class SwarmMain {
         jaxrsDeployment.setApplication(JaxRsApplication.class);
         jaxrsDeployment.addResource(MyResource.class);
         jaxrsDeployment.getArchive()
-                .addPackages(true, "no.husbanken.altinn")
+                .addPackages(true, "swarm")
                 .addAsWebInfResource(new FileAsset(new File("src/main/webapp/WEB-INF/beans.xml")), "beans.xml");
 
         jaxrsDeployment.getArchive().getContent().forEach((p, r) -> log.debug("\tresource [{}]" + p));

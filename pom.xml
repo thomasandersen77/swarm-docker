@@ -59,7 +59,7 @@
                 <artifactId>wildfly-swarm-plugin</artifactId>
                 <version>1.0.0.Alpha3</version>
                 <configuration>
-                    <mainClass>SwarmMain</mainClass>
+                    <mainClass>swarm.SwarmMain</mainClass>
                 </configuration>
                 <executions>
                     <execution>
