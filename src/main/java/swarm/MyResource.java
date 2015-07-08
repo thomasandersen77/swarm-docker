@@ -10,6 +10,6 @@ public class MyResource {
     @GET
     @Produces("text/plain")
     public String foo() {
-        return "bar";
+        return "bar\n";
     }
 }
