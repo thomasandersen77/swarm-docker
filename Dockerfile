@@ -10,15 +10,13 @@ ENV MAVEN_HOME /usr/share/maven
 
 WORKDIR /source
 
-ADD settings.xml /root/.m2/
-
 ADD pom.xml     /source/pom.xml
 RUN mvn install -DskipTests
 
 ADD src/         /source/src/
 
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
-RUN chmod 777       /source/target/SwarmDocker-swarm.jar
+EXPOSE 8080
 
-RUN java -Djboss.bind.address=0.0.0.0 -jar /source/target/SwarmDocker-swarm.jar
+ENTRYPOINT ["java", "-jar", "/source/target/SwarmDocker-swarm.jar"]
