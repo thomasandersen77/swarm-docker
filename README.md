@@ -29,6 +29,8 @@ bar
 
 Big thanks to @emag for his pointers!
 
+You can read more about wildfly-swarm here [https://github.com/wildfly-swarm]
+
 
 
 
